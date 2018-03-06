@@ -1,0 +1,5 @@
+model_checkpoint_path: "C:\\TensorFlow\\SfMLearner\\checkpoints\\model.latest"
+all_model_checkpoint_paths: "C:\\TensorFlow\\SfMLearner\\checkpoints\\model-9879"
+all_model_checkpoint_paths: "C:\\TensorFlow\\SfMLearner\\checkpoints\\model-19758"
+all_model_checkpoint_paths: "C:\\TensorFlow\\SfMLearner\\checkpoints\\model-29637"
+all_model_checkpoint_paths: "C:\\TensorFlow\\SfMLearner\\checkpoints\\model.latest"

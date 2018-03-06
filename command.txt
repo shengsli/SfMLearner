@@ -1,0 +1,16 @@
+python data\prepare_train_data.py --dataset_dir=raw_data_downloader\ --dataset_name=kitti_raw_eigen --dump_root=formatted_data\ --seq_length=3 --img_width=416 --img_height=128 --num_threads=4
+
+python train.py --dataset_dir=C:\TensorFlow\SfMLearner\formatted_data\ --checkpoint_dir=C:\TensorFlow\SfMLearner\checkpoints\ --img_width=416 --img_height=128 --batch_size=4
+
+# Evaluation
+## Depth 
+python kitti_eval\eval_depth.py --kitti_dir=raw_data_downloader\ --pred_file=kitti_eval\kitti_eigen_depth_predictions.npy
+## Pose 
+python kitti_eval\eval_pose.py --gtruth_dir=kitti_eval\pose_data\ground_truth\09\ --pred_dir=kitti_eval\pose_data\ours_results\09\
+python kitti_eval\eval_pose.py --gtruth_dir=kitti_eval\pose_data\ground_truth\10\ --pred_dir=kitti_eval\pose_data\ours_results\10\
+
+# Testing
+## Depth
+python test_kitti_depth.py --dataset_dir raw_data_downloader/ --output_dir test_kitti_depth_output\ --ckpt_file models\model-190532
+## Pose 
+python test_kitti_pose.py --test_seq 9 --dataset_dir raw_data_downloader/ --output_dir test_kitti_pose_output\ --ckpt_file models\model-100280
